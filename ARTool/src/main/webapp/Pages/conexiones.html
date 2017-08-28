@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+<title>ARTool</title>
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
+
+<script src="../recursos/lib/jquery.js"></script>
+<script src="../recursos/lib/tether.min.js"></script>
+<script src="../recursos/lib/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="../recursos/estilos/bootstrap.min.css">
+
+
+
+<link rel="stylesheet" href="../recursos/estilos/conexiones.css">
+<link rel="stylesheet" href="../recursos/estilos/pace-theme-minimal.css">
+
+
+
+<script src="../recursos/lib/jquery.dataTables.min.js"></script>
+<script src="../recursos/lib/dataTables.bootstrap4.min.js"></script>
+
+<link rel="stylesheet" href="../recursos/estilos/dataTables.bootstrap4.min.css">
+
+
+<script
+	data-pace-options='{ "elements": { "selectors": ["#model_registrar_db"] }, "startOnPageLoad": false }'
+	src="../recursos/lib/pace.js"></script>
+
+<script src="../recursos/javascript/conexiones.js"></script>
+
+
+<!-- CSS  -->
+
+<!-- CSS  -->
+
+</head>
+
+
+
+
+<body>
+
+	<nav id="nav_bar"
+		class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarTogglerDemo01"
+			aria-controls="navbarTogglerDemo01" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+			<a class="navbar-brand" href="#">ARTool</a>
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item"><a class="nav-link"
+					href="/ARTool/Pages/visualizador.html">Visualizador </a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="/ARTool/Pages/conexiones.html">Conexiones </a></li>
+
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle" href="http://example.com"
+					id="navbarDropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false"> Ayuda </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+						<a class="dropdown-item" href="../recursos/img/GUIA ARTOOL.pdf"
+							download="GUIA ARTOOL.pdf" href="#">Descargar Guia</a>
+
+					</div></li>
+			</ul>
+			<form class="form-inline my-2 my-lg-0">
+				<small><span class="navbar-text" id="nombre_sesion"
+					style="margin-right: 15px"> </span></small>
+			</form>
+			<form class="form-inline my-2 my-lg-0">
+				<a class="btn btn-primary my-2 my-sm-0" href="/ARTool/index.html">Salir</a>
+			</form>
+		</div>
+	</nav>
+
+
+	<div class="container-fluid"
+		style="width: 70%; margin-top: 35px; margin-bottom: 30px">
+
+		<div align="center" style="margin-bottom: 30px">
+			<h1>Bases de datos Registradas</h1>
+		</div>
+		<div style="margin-bottom: 30px">
+
+			<button type="button" class="btn btn-warning" data-toggle="modal"
+				style="cursor: pointer;" data-target="#model_registrar_db"
+				data-whatever="@mdo">Nueva Base de Datos</button>
+		</div>
+
+		<table id="dataTable" class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Conexion</th>
+					<th>Nombre DB</th>
+					<th>Fecha</th>
+					<th>Seleccionar</th>
+				</tr>
+			</thead>
+
+			<tfoot>
+				<tr>
+					<th>#</th>
+					<th>Conexion</th>
+					<th>Nombre DB</th>
+					<th>Fecha</th>
+					<th>Seleccionar</th>
+				</tr>
+			</tfoot>
+
+			<tbody id="table_body">
+
+			</tbody>
+		</table>
+
+		<div class="modal fade" id="model_registrar_db" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Nueva Base de
+							Datos</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<form style="padding: 30px; padding-top: 0">
+
+
+							<div id="alerta_conexion"
+								class="alert alert-danger a	lert-dismissible fade show"
+								role="alert" style="display: none"></div>
+
+
+
+							<div class="form-group row">
+								<label for="example-search-input" class="col-2 col-form-label">Nombre
+									Conexión:</label>
+								<div class="col-10">
+									<input class="form-control" type="search"
+										placeholder="Nombre de la nueva conexión" id="conexion_input">
+								</div>
+							</div>
+
+
+							<fieldset disabled>
+								<div class="form-group row">
+									<label for="disabledSelect" class="col-2 col-form-label">Base
+										Datos:</label>
+									<div class="col-10">
+										<select class="form-control " id="tip_bd">
+											<option>PostgreSQL</option>
+										</select>
+									</div>
+								</div>
+							</fieldset>
+							<div class="form-group row">
+								<label for="example-text-input" class="col-2 col-form-label">URL
+									Conexión:</label>
+								<div class="col-10">
+									<input class="form-control" type="text"
+										value="jdbc:postgresql://localhost:5432/database"
+										placeholder="URL Conexión" id="url_input">
+								</div>
+							</div>
+
+
+							<div class="form-group row">
+								<label for="example-text-input" class="col-2 col-form-label">Usuario
+									BD:</label>
+								<div class="col-10">
+									<input class="form-control" type="text" placeholder=""
+										id="usuario_bd_input">
+								</div>
+							</div>
+
+
+							<div class="form-group row">
+								<label for="example-text-input" class="col-2 col-form-label">Password:</label>
+								<div class="col-10">
+									<input class="form-control" type="password" id="password_input">
+								</div>
+							</div>
+
+
+						</form>
+
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn btn-primary"
+							onclick="guardarDb()">Guardar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--  
+		
+		
+		 -->
+
+
+		<div class="modal fade" id="modal_seleccionar" tabindex="-1"
+			role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Seleccionar DB</h5>
+						<button type="button" class="close" data-dismiss="modal"
+							aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+
+						<div id="alerta_seleccion_db"
+							class="alert alert-success alert-dismissible fade show"
+							role="alert" style="display: none">
+							Has seleccionado la base de datos <a
+								href="/ARTool/Pages/visualizador.html">Ir al
+								Visualizador!</a>
+						</div>
+
+
+
+						<div class="row">
+							<div class="col-sm-5">Tablas</div>
+							<div class="col-sm-5" id="numero_tablas">0</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-5">Vistas</div>
+							<div class="col-sm-5" id="numero_vistas">0</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-5">Funciones</div>
+							<div class="col-sm-5" id="numero_funciones">0</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-5">Triggers</div>
+							<div class="col-sm-5" id="numero_triggers">0</div>
+						</div>
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary"
+							data-dismiss="modal" style="cursor: pointer">Cerrar</button>
+						<button id="elegir_db" type="button" class="btn btn-primary">Elegir</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+</body>
+
+</html>

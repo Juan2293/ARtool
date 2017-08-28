@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+
+
+<link rel="stylesheet" href="recursos/estilos/bootstrap.min.css">
+<script src="recursos/lib/jquery.js"></script>
+<script src="recursos/lib/tether.min.js"></script>
+<script src="recursos/lib/bootstrap.min.js"></script>
+	
+<link rel="stylesheet" href="recursos/estilos/login.css">
+
+</head>
+<body>
+
+	<h1>Architecture Recovery Tool</h1>
+
+
+	<form id="formulario">
+
+		<ul id="tabs" class="nav nav-tabs nav-justified " role="tablist">
+			<li class="nav-item" id="tab-login"><a class="nav-link active" href="#iniciar"
+				role="tab" data-toggle="tab"><b>Login</b></a></li>
+			<li class="nav-item"><a class="nav-link" href="#registro"
+				role="tab" data-toggle="tab"><b>Registrar</b></a></li>
+		</ul>
+
+
+		<div class="tab-content">
+
+			<div id="iniciar" class="tab-pane active">
+
+
+
+				<div id="alerta_usuario"
+					class="alert alert-danger alert-dismissible fade show" role="alert"
+					style="display: none"></div>
+				<div class="form-group row ">
+					<div class="col-12">
+						<input class="form-control" type="text" placeholder="Usuario"
+							id="usuario">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-12">
+						<input class="form-control" type="password" placeholder="Password"
+							id="password">
+					</div>
+				</div>
+
+				<button id="btn_login" type="button" class="btn btn-primary"
+					onclick="consultarUsuario()">Login</button>
+
+			</div>
+
+			<div id="registro" class="tab-pane fade">
+
+				<div id="alerta_registrar" class="mensaje" role="alert"
+					style="display: none"></div>
+
+				<div class="form-group row ">
+					<div class="col-12">
+						<input class="form-control" type="text" placeholder="Usuario"
+							id="r_usuario">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-12">
+						<input class="form-control" type="password" placeholder="Password"
+							id="r_password">
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-12">
+						<input class="form-control" type="password"
+							placeholder="Confirmar Password" id="r_confirmar_password" >
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-12">
+						<input class="form-control" type="email" placeholder="Email"
+							id="r_email" >
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-12">
+						<input class="form-control" type="text" placeholder="Nombre"
+							id="r_nombre" >
+					</div>
+				</div>
+				<button id="btn_registrar" type="button" class="btn btn-primary "
+					onclick="guardarUsuario()">Guardar</button>
+
+			</div>
+
+		</div>
+
+
+
+
+	</form>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="recursos/javascript/login.js"></script>
+</body>
+
+</html>

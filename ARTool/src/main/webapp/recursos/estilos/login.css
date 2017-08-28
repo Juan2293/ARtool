@@ -1,0 +1,59 @@
+*{
+  overflow: none;
+  margin: 0px;
+  padding: 0px;
+}
+body{
+
+}
+h1{
+
+
+  margin-top: 50px;
+  text-align: center;
+}
+
+input{
+
+  width: 40%;
+  margin: 0 auto;
+}
+#formulario{
+
+  width: 550px;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.2);
+  background: #FFFFFF;
+  text-align: center;
+}
+.tab-content{
+
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+#tabs{
+
+  margin-bottom: 50px;
+}
+.nav-item{
+
+  border: none;
+}
+
+#btn_login, #btn_registrar{
+  cursor: pointer;
+  height: auto;;
+  margin-top: 15px;
+  width: 150px;
+}
+@media (max-width: 550px) {
+
+  #formulario{
+
+    width: 90%;
+
+
+  }
+}

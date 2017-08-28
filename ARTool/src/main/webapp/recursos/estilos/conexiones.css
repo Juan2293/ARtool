@@ -1,0 +1,51 @@
+html {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html, body {
+	font-family: 'Open Sans', sans-serif !important;
+	overflow: auto !important;
+}
+#imprimir_pdf{
+     color:#FFFFFF;
+	 cursor: pointer;
+
+}
+.colum_btn, .table th, .colum1 {
+	text-align: center;
+}
+
+.table td, .table th {
+	padding: .30rem;
+}
+<!-- da el color al botón del dataTable-->
+.btn_elegir_db {
+	
+	
+	background-color: #16a085 !important;
+	
+}
+
+.btn_elegir_db:hover {
+	opacity: 1;
+}
+
+#btn_seleccion{
+	
+	color: #fff;
+	font-size: 13px;
+	background-color: #16a085 !important;
+	opacity: 0.85;
+	cursor: pointer;
+}
+
+
+#elegir_db {
+	cursor: pointer;
+}
+button{
+		cursor: pointer;
+
+}

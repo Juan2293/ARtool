@@ -8,7 +8,8 @@
 
 
 <script src="../recursos/lib/vis.js"></script>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans'
+	rel='stylesheet' type='text/css'>
 
 <!-- JS  -->
 <script src="../recursos/lib/jquery.js"></script>
@@ -27,7 +28,7 @@
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-	
+
 <link rel="stylesheet" href="../recursos/estilos/visualizador.css"></link>
 
 <link rel="stylesheet" href="../recursos/estilos/vis.css"></link>
@@ -39,7 +40,6 @@
 
 </head>
 <body>
-
 
 	<nav id="nav_bar"
 		class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
@@ -441,13 +441,15 @@
 						<div class="container">
 							<br>
 							<div class="row">
+								<button type="button" class="btn_medidas">Ejecutar</button>
+
+							</div>
+							<div class="row">
 								<div class="col">Grado medio</div>
 								<div class="col">
 									<span class="medidas_grado_medio"></span>
 								</div>
-								<div class="col">
-									<button type="button" class="btn_medidas">Ejecutar</button>
-								</div>
+								<div class="col"></div>
 							</div>
 							<br>
 							<div class="row">
@@ -455,9 +457,7 @@
 								<div class="col">
 									<span class="medidas_grado_grafo"> </span>
 								</div>
-								<div class="col">
-									<button type="button" class="btn_medidas">Ejecutar</button>
-								</div>
+								<div class="col"></div>
 							</div>
 							<br>
 							<div class="row">
@@ -465,9 +465,7 @@
 								<div class="col">
 									<span class="medidas_imple"></span>
 								</div>
-								<div class="col">
-									<button type="button" class="btn_medidas">Ejecutar</button>
-								</div>
+								<div class="col"></div>
 							</div>
 							<br>
 							<div class="row">
@@ -475,9 +473,7 @@
 								<div class="col">
 									<span class="medidas_imple"></span>
 								</div>
-								<div class="col">
-									<button type="button" class="btn_medidas">Ejecutar</button>
-								</div>
+								<div class="col"></div>
 							</div>
 							<br>
 							<div class="row">
@@ -485,9 +481,7 @@
 								<div class="col">
 									<span class="medidas_imple"></span>
 								</div>
-								<div class="col">
-									<button type="button" class="btn_medidas">Ejecutar</button>
-								</div>
+								<div class="col"></div>
 							</div>
 							<br>
 
@@ -516,9 +510,6 @@
 					<a class="dropdown-item"
 						onclick='downloadCSV({ filename: "stock-data.csv" });'>CSV</a> <a
 						class="dropdown-item" id="boton-xml" href="#">GraphML</a>
-					<!--   <a class="dropdown-item" href="#">Something else here</a>
-			    <div class="dropdown-divider"></div>
-			    <a class="dropdown-item" href="#">Separated link</a>-->
 				</div>
 			</div>
 

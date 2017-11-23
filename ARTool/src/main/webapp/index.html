@@ -4,12 +4,13 @@
 <meta charset="utf-8">
 <title>Login</title>
 
+<script src="https://use.fontawesome.com/563fc5be81.js"></script>
 
 <link rel="stylesheet" href="recursos/estilos/bootstrap.min.css">
 <script src="recursos/lib/jquery.js"></script>
 <script src="recursos/lib/tether.min.js"></script>
 <script src="recursos/lib/bootstrap.min.js"></script>
-	
+
 <link rel="stylesheet" href="recursos/estilos/login.css">
 
 </head>
@@ -21,8 +22,8 @@
 	<form id="formulario">
 
 		<ul id="tabs" class="nav nav-tabs nav-justified " role="tablist">
-			<li class="nav-item" id="tab-login"><a class="nav-link active" href="#iniciar"
-				role="tab" data-toggle="tab"><b>Login</b></a></li>
+			<li class="nav-item" id="tab-login"><a class="nav-link active"
+				href="#iniciar" role="tab" data-toggle="tab"><b>Login</b></a></li>
 			<li class="nav-item"><a class="nav-link" href="#registro"
 				role="tab" data-toggle="tab"><b>Registrar</b></a></li>
 		</ul>
@@ -32,27 +33,36 @@
 
 			<div id="iniciar" class="tab-pane active">
 
-
-
 				<div id="alerta_usuario"
 					class="alert alert-danger alert-dismissible fade show" role="alert"
 					style="display: none"></div>
 				<div class="form-group row ">
 					<div class="col-12">
-						<input class="form-control" type="text" placeholder="Usuario"
-							id="usuario">
+
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon1"><i
+								style="margin: auto" class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" class="form-control" placeholder="Usuario"
+								aria-describedby="basic-addon1" id="usuario">
+						</div>
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col-12">
-						<input class="form-control" type="password" placeholder="Password"
-							id="password">
+
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2"><i
+								style="margin: auto" class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="password" class="form-control"
+								placeholder="Password" aria-describedby="basic-addon2"
+								id="password">
+						</div>
 					</div>
+
 				</div>
 
 				<button id="btn_login" type="button" class="btn btn-primary"
-					onclick="consultarUsuario()">Login</button>
-
+					onclick="consultarUsuario()">Iniciar Sesión</button>
 			</div>
 
 			<div id="registro" class="tab-pane fade">
@@ -62,33 +72,63 @@
 
 				<div class="form-group row ">
 					<div class="col-12">
-						<input class="form-control" type="text" placeholder="Usuario"
-							id="r_usuario">
+
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon3"><i
+								style="margin: auto" class="fa fa-user" aria-hidden="true"></i></span>
+							<input type="text" class="form-control" placeholder="Usuario"
+								aria-describedby="basic-addon3" id="r_usuario">
+						</div>
+					</div>
+
+
+				</div>
+				<div class="form-group row">
+					<div class="col-12">
+
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon4"><i
+								style="margin: auto" class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="password" class="form-control"
+								placeholder="Password" aria-describedby="basic-addon4"
+								id="r_password">
+						</div>
+					</div>
+
+				</div>
+				<div class="form-group row">
+					<div class="col-12">
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon5"><i
+								style="margin: auto" class="fa fa-lock" aria-hidden="true"></i></span>
+							<input type="password" class="form-control"
+								placeholder="Confirmar Password" aria-describedby="basic-addon5"
+								id="r_confirmar_password">
+						</div>
 					</div>
 				</div>
 				<div class="form-group row">
 					<div class="col-12">
-						<input class="form-control" type="password" placeholder="Password"
-							id="r_password">
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-12">
-						<input class="form-control" type="password"
-							placeholder="Confirmar Password" id="r_confirmar_password" >
-					</div>
-				</div>
-				<div class="form-group row">
-					<div class="col-12">
-						<input class="form-control" type="email" placeholder="Email"
-							id="r_email" >
+
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon6"><i
+								style="margin: auto" class="fa fa-envelope" aria-hidden="true"></i></span>
+							<input type="email" class="form-control" placeholder="Email"
+								aria-describedby="basic-addon6" id="r_email">
+						</div>
 					</div>
 				</div>
 
 				<div class="form-group row">
 					<div class="col-12">
-						<input class="form-control" type="text" placeholder="Nombre"
-							id="r_nombre" >
+	
+						<div class="input-group">
+							<span class="input-group-addon" id="basic-addon2"><i
+								style="margin: auto" class="fa fa-id-card" aria-hidden="true"></i></span>
+							<input type="text" class="form-control"
+								placeholder="Nombre" aria-describedby="basic-addon2"
+								id="r_nombre">
+						</div>
 					</div>
 				</div>
 				<button id="btn_registrar" type="button" class="btn btn-primary "

@@ -1,5 +1,6 @@
 
 var toggle_presionado= false;
+
 $(document).ready(function(){
 	$('.menu_abajo:has(ul)').click(function(e){
 		e.preventDefault();
@@ -68,7 +69,7 @@ $(document).ready(function(){
 		var tablas= Object.keys(nodes.get({returnType:"Object"})).length;
 		var edges= allEdges;
 		var grado_medio=(2*edges)/tablas;
-		var gradoDelGrafo= tablas*2;
+		var gradoDelGrafo= edges*2;
 
 		if(tablas==0){
 			$(".medidas_grado_medio").text(""+0)
@@ -112,15 +113,10 @@ var triggers_activos = false;
 var filtro_items =[];
 
 
-var array_tablas =[];
-var array_funciones =[];
-var array_vistas = [];
-var array_triggers =[];
-
-
 
 function cargarContenido(){
 
+	// se carga el nombre del usuario que ingresó 
 	$.ajax({
 
 		url: "../controller/clienteRest/obtenerInfoUsuario",
@@ -132,6 +128,8 @@ function cargarContenido(){
 		$("#nombre_sesion").text(data.nombre);
 	});
 
+	// si hay una base de datos seleccionada se cargan los datos de ésta para el panel 
+	// en el viualizador
 	$.ajax({
 
 		url: "../controller/clienteRest/obtenerInfoUsuDb",
@@ -141,8 +139,6 @@ function cargarContenido(){
 	}).then(function(data) {
 		//$("#nombre_sesion").text(data.nombre.toUpperCase());
 
-
-
 		$("#nombre_conexion_titulo").text(data.nombre_conexion);
 		$("#nombre_db_titulo").text(data.nombre);
 		$("#nombre_db_side").text(data.nombre);
@@ -151,6 +147,7 @@ function cargarContenido(){
 	});
 
 }
+// se ejecuta la función para cargar el contenido
 cargarContenido();
 
 function startNetwork() {
@@ -973,6 +970,8 @@ function obtener_triggers(){
 			intContadorTriggers++;
 
 			allNodes =  nodes.get({returnType:"Object"});
+			
+			console.log(allNodes)
 
 
 			// numero de nodos
@@ -1226,7 +1225,7 @@ function descargarArchivo(contenidoEnBlob, nombreArchivo) {
 			save.href = event.target.result;
 			save.target = '_blank';
 			//Truco: así le damos el nombre al archivo 
-			save.download = nombreArchivo || 'archivo.graphML';
+			save.download = nombreArchivo || 'grafo.graphML';
 			var clicEvent = new MouseEvent('click', {
 				'view': window,
 				'bubbles': true,
@@ -1291,7 +1290,7 @@ window.addEventListener('DOMContentLoaded', function(){
 
 	document.getElementById('boton-xml').addEventListener('click', function () {
 
-		descargarArchivo(generarXml(), 'archivo.graphML');
+		descargarArchivo(generarXml(), 'grafo.graphML');
 	}, false);
 
 });

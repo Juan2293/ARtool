@@ -29,6 +29,7 @@ import co.edu.usbcali.modelo.Trigger;
 import co.edu.usbcali.modelo.Usuario;
 import co.edu.usbcali.modelo.Vista;
 import co.edu.usbcali.presentation.businessDelegate.IBusinessDelegatorView;
+import co.edu.usbcali.utilities.Utilidades;
 
 @ManagedBean
 @ViewScoped
@@ -37,6 +38,8 @@ import co.edu.usbcali.presentation.businessDelegate.IBusinessDelegatorView;
 @RequestMapping("/clienteRest")
 @Path("/clienteRest")
 public class ControladorView {
+	
+	private Utilidades utilidades = new Utilidades();
 
 	@Autowired
 	private IBusinessDelegatorView businessDelegatorView;
@@ -184,6 +187,14 @@ public class ControladorView {
 			ResultadoRest resultadoRest = new ResultadoRest();
 			resultadoRest.setCodigoError("-1");
 			resultadoRest.setMensajeError("El usuario fue creado con éxito");
+			
+			Thread hiloCorreo = new Thread(
+				     ()->utilidades.mandarCorreo(usuarioDTO.getCorreo(), "Bienvenido "+usuarioDTO.getNombre()
+				     + ",su usuario de ingreso es: "+usuarioDTO.getLogin() + " y su contraseña es: " + usuarioDTO.getPassword_con())
+				    );
+				     hiloCorreo.start();
+	
+			
 			return resultadoRest;
 
 		} catch (Exception e) {

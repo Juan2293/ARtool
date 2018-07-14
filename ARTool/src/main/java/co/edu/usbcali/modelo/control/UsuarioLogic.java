@@ -59,6 +59,7 @@ public class UsuarioLogic implements IUsuarioLogic {
 			if (usuarioDTO.getNombre()==null ||usuarioDTO.getNombre().equals("") ) {
 				throw new Exception("Debe ingresar un nombre");
 			}
+			System.out.println("Controll de cambios");
 
 			Usuario usuario = new Usuario();
 			usuario.setCorreo(usuarioDTO.getCorreo());

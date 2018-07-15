@@ -60,7 +60,8 @@ public class UsuarioLogic implements IUsuarioLogic {
 				throw new Exception("Debe ingresar un nombre");
 			}
 			System.out.println("Controll de cambios");
-			System.out.println("Control s");
+			System.out.println("Control sdadadada");
+			System.out.println("Control");
 			Usuario usuario = new Usuario();
 			usuario.setCorreo(usuarioDTO.getCorreo());
 			usuario.setNombre(usuarioDTO.getNombre());

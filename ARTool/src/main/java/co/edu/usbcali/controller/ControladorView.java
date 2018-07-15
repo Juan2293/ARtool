@@ -53,6 +53,7 @@ public class ControladorView {
 
 	@RequestMapping(value="/getFunciones",method=RequestMethod.GET)
 	public ArrayList<Funcion> getFunciones() {
+		System.out.println("oli");
 		String db_id = (String)RequestContextHolder.currentRequestAttributes().getAttribute( "conexion", RequestAttributes.SCOPE_SESSION );
 		return businessDelegatorView.consultarFunciones(db_id);
 	}
